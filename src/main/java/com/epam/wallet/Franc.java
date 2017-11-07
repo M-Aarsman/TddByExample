@@ -2,13 +2,12 @@ package com.epam.wallet;
 
 public class Franc extends Money {
 
-    Franc (int amount) {
-        this.amount = amount;
-        currency = "CHF";
+    Franc (int amount, String currency) {
+        super(amount, currency);
     }
 
     @Override
     Money times(int multiplier) {
-        return new Franc(amount * multiplier);
+        return Money.franc(amount * multiplier);
     }
 }
